@@ -1,11 +1,13 @@
+import { contentMap } from '@/assets/contentMap';
+
 const trochaOptions = [
   {
     id: 'trocha-1h',
     name: '1 Hora VIP',
     description: 'Guaduas – Lajitas – Guaduas',
     price: '$1.200.000',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    alt: 'Trocha VIP 1 hora terreno pedregoso',
+    image: contentMap.trochaImages.hora_vip.src,
+    alt: contentMap.trochaImages.hora_vip.alt,
     whatsappMessage: 'Hola! Quiero armar mi Trocha VIP de 1 hora',
     popular: false
   },
@@ -14,8 +16,8 @@ const trochaOptions = [
     name: 'Medio Día VIP',
     description: 'Ruta extendida por La Magdalena – Útica – Guaduero',
     price: '$4.000.000',
-    image: 'https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    alt: 'Trocha VIP medio día con curvas',
+    image: contentMap.trochaImages.medio_dia.src,
+    alt: contentMap.trochaImages.medio_dia.alt,
     whatsappMessage: 'Hola! Quiero armar mi Trocha VIP de medio día',
     popular: true
   },
@@ -24,8 +26,8 @@ const trochaOptions = [
     name: 'Día Completo VIP',
     description: 'Campeona – La Cabaña – Carbonera – Alto de la Rana',
     price: '$7.000.000',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    alt: 'Trocha VIP día completo con equipo',
+    image: contentMap.trochaImages.dia_completo.src,
+    alt: contentMap.trochaImages.dia_completo.alt,
     whatsappMessage: 'Hola! Quiero armar mi Trocha VIP de día completo',
     popular: false
   }
@@ -61,6 +63,7 @@ export default function TrochaVipSection() {
                 src={option.image}
                 alt={option.alt}
                 className="w-full h-48 object-cover" 
+                loading="lazy"
                 data-testid={`trocha-image-${option.id}`}
               />
               <div className="p-6">

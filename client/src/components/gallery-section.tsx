@@ -1,103 +1,15 @@
 import { useState } from "react";
+import { contentMap } from '@/assets/contentMap';
 
-const galleryItems = [
-  {
-    id: 'agua-clara-1',
-    category: 'cuatrimoto',
-    route: 'agua-clara',
-    type: 'foto',
-    image: 'https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Cuatrimoto Agua Clara vista río Magdalena'
-  },
-  {
-    id: 'buggy-agua-clara-1',
-    category: 'buggy',
-    route: 'agua-clara',
-    type: 'foto',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Buggy Can-Am mirador Agua Clara'
-  },
-  {
-    id: 'salto-versalles-1',
-    category: 'cuatrimoto',
-    route: 'salto',
-    type: 'foto',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Cuatrimoto Salto Versalles cascada'
-  },
-  {
-    id: 'buggy-salto-1',
-    category: 'buggy',
-    route: 'salto',
-    type: 'foto',
-    image: 'https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Buggy ruta Salto Versalles'
-  },
-  {
-    id: 'totumal-1',
-    category: 'cuatrimoto',
-    route: 'totumal',
-    type: 'foto',
-    image: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Vista panorámica Alto de Totumal'
-  },
-  {
-    id: 'buggy-totumal-1',
-    category: 'buggy',
-    route: 'totumal',
-    type: 'foto',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Buggy filo montaña Totumal'
-  },
-  {
-    id: 'pozo-encantado-1',
-    category: 'cuatrimoto',
-    route: 'pozo',
-    type: 'foto',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Sendero Pozo Encantado'
-  },
-  {
-    id: 'trocha-1',
-    category: 'trocha',
-    route: 'trocha',
-    type: 'foto',
-    image: 'https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Terreno pedregoso Trocha VIP'
-  },
-  {
-    id: 'trocha-2',
-    category: 'trocha',
-    route: 'trocha',
-    type: 'foto',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Grupo Trocha VIP día completo'
-  },
-  {
-    id: 'video-1',
-    category: 'video',
-    route: 'video',
-    type: 'video',
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Video POV aventura extrema'
-  },
-  {
-    id: 'video-2',
-    category: 'video',
-    route: 'video',
-    type: 'video',
-    image: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Video aéreo rutas Guaduas'
-  },
-  {
-    id: 'video-3',
-    category: 'video',
-    route: 'video',
-    type: 'video',
-    image: 'https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
-    alt: 'Video aventura grupal'
-  }
-];
+// Using real XTREMCOL photos from contentMap
+const galleryItems = contentMap.gallery.map(item => ({
+  id: item.id,
+  category: item.category,
+  route: item.route,
+  type: item.type,
+  image: item.src,
+  alt: item.alt
+}));
 
 const filters = [
   { id: 'all', label: 'Todos' },
@@ -154,6 +66,7 @@ export default function GallerySection() {
                 src={item.image}
                 alt={item.alt}
                 className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer" 
+                loading="lazy"
                 data-testid={`gallery-image-${item.id}`}
               />
               {item.type === 'video' && (

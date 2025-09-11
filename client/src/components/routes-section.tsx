@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useLocation } from 'wouter';
+import { contentMap } from '@/assets/contentMap';
 
 type Route = {
   id: string;
@@ -13,23 +14,23 @@ type Route = {
   includes: string[];
 };
 
-// Route images mapping
+// Route images mapping - now using real XTREMCOL photos
 const routeImages: Record<string, { image: string; alt: string }> = {
   agua_clara: {
-    image: 'https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    alt: 'Ruta Agua Clara con vista al Río Magdalena'
+    image: contentMap.routeImages.agua_clara.src,
+    alt: contentMap.routeImages.agua_clara.alt
   },
   salto_versalles: {
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    alt: 'Ruta Salto Versalles con cascada'
+    image: contentMap.routeImages.salto_versalles.src,
+    alt: contentMap.routeImages.salto_versalles.alt
   },
   alto_totumal: {
-    image: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    alt: 'Ruta Alto de Totumal con vista panorámica'
+    image: contentMap.routeImages.alto_totumal.src,
+    alt: contentMap.routeImages.alto_totumal.alt
   },
   pozo_encantado: {
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    alt: 'Ruta Pozo Encantado sendero natural'
+    image: contentMap.routeImages.pozo_encantado.src,
+    alt: contentMap.routeImages.pozo_encantado.alt
   }
 };
 
@@ -93,6 +94,7 @@ export default function RoutesSection() {
                   src={imageData.image}
                   alt={imageData.alt}
                   className="w-full h-48 object-cover" 
+                  loading="lazy"
                   data-testid={`route-image-${route.name}`}
                 />
                 <div className="p-6">

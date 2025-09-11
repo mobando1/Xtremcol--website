@@ -1,3 +1,5 @@
+import { contentMap } from '@/assets/contentMap';
+
 const buggyRoutes = [
   {
     id: 'buggy-agua-clara',
@@ -5,8 +7,8 @@ const buggyRoutes = [
     duration: '1h - Parada mirador (10 min)',
     xdsPrice: '$400.000',
     x3Price: '$500.000',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    alt: 'Buggy en mirador Agua Clara',
+    image: contentMap.buggyImages.agua_clara.src,
+    alt: contentMap.buggyImages.agua_clara.alt,
     xdsMessage: 'Hola! Quiero reservar Agua Clara Buggy XDS',
     x3Message: 'Hola! Quiero reservar Agua Clara Buggy X3'
   },
@@ -16,8 +18,8 @@ const buggyRoutes = [
     duration: '1h 30m - Parada cascada (30 min)',
     xdsPrice: '$550.000',
     x3Price: '$650.000',
-    image: 'https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    alt: 'Buggy Salto Versalles con cascada',
+    image: contentMap.buggyImages.salto_versalles.src,
+    alt: contentMap.buggyImages.salto_versalles.alt,
     xdsMessage: 'Hola! Quiero reservar Salto Versalles Buggy XDS',
     x3Message: 'Hola! Quiero reservar Salto Versalles Buggy X3'
   },
@@ -27,8 +29,8 @@ const buggyRoutes = [
     duration: '1h 30m - 2 miradores (15 min c/u)',
     xdsPrice: '$550.000',
     x3Price: '$650.000',
-    image: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    alt: 'Buggy Alto de Totumal en montaña',
+    image: contentMap.buggyImages.alto_totumal.src,
+    alt: contentMap.buggyImages.alto_totumal.alt,
     xdsMessage: 'Hola! Quiero reservar Alto de Totumal Buggy XDS',
     x3Message: 'Hola! Quiero reservar Alto de Totumal Buggy X3'
   }
@@ -95,6 +97,7 @@ export default function BuggySection() {
                 src={route.image}
                 alt={route.alt}
                 className="w-full h-48 object-cover" 
+                loading="lazy"
                 data-testid={`buggy-image-${route.id}`}
               />
               <div className="p-6">

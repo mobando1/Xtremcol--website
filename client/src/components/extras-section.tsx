@@ -1,3 +1,5 @@
+import { contentMap } from '@/assets/contentMap';
+
 export default function ExtrasSection() {
   return (
     <section id="extras" className="py-20">
@@ -16,9 +18,10 @@ export default function ExtrasSection() {
             <div className="md:flex">
               <div className="md:w-1/2">
                 <img 
-                  src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Video profesional muestra de clips POV"
+                  src={contentMap.extrasPoster.src}
+                  alt={contentMap.extrasPoster.alt}
                   className="w-full h-64 md:h-full object-cover" 
+                  loading="lazy"
                   data-testid="video-sample-image"
                 />
               </div>
