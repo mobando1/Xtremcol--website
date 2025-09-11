@@ -21,10 +21,15 @@ const filters = [
 
 export default function GallerySection() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [showAll, setShowAll] = useState(false);
 
   const filteredItems = activeFilter === 'all' 
     ? galleryItems 
     : galleryItems.filter(item => item.category === activeFilter);
+  
+  // Show only first 6 items initially for faster loading
+  const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 6);
+  const hasMoreItems = filteredItems.length > 6;
 
   return (
     <section id="galeria" className="py-20 bg-muted/20">
@@ -56,8 +61,8 @@ export default function GallerySection() {
         </div>
         
         {/* Gallery Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-12" data-testid="gallery-grid">
-          {filteredItems.map((item) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8" data-testid="gallery-grid">
+          {displayedItems.map((item) => (
             <div 
               key={item.id}
               className="relative animate-fade-in"
@@ -77,6 +82,20 @@ export default function GallerySection() {
             </div>
           ))}
         </div>
+        
+        {/* Ver más button for progressive loading */}
+        {!showAll && hasMoreItems && (
+          <div className="text-center mb-8">
+            <button
+              onClick={() => setShowAll(true)}
+              className="bg-muted hover:bg-primary hover:text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
+              data-testid="gallery-load-more-btn"
+            >
+              <i className="fas fa-images mr-2"></i>
+              Ver más fotos ({filteredItems.length - 6} restantes)
+            </button>
+          </div>
+        )}
         
         <div className="text-center">
           <a 

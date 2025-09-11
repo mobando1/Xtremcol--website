@@ -10,12 +10,15 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${contentMap.heroImage.src})`
-        }}
+      {/* Optimized Background Image */}
+      <img 
+        src={contentMap.heroImage.src}
+        alt={contentMap.heroImage.alt}
+        className="absolute inset-0 w-full h-full object-cover"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        data-testid="hero-background-image"
       />
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/40" />
