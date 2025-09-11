@@ -64,6 +64,7 @@ export default function TrochaVipSection() {
                 alt={option.alt}
                 className="w-full h-48 object-cover" 
                 loading="lazy"
+                decoding="async"
                 data-testid={`trocha-image-${option.id}`}
               />
               <div className="p-6">

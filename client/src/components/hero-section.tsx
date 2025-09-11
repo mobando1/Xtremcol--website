@@ -15,7 +15,6 @@ export default function HeroSection() {
         src={contentMap.heroImage.src}
         alt={contentMap.heroImage.alt}
         className="absolute inset-0 w-full h-full object-cover"
-        fetchPriority="high"
         loading="eager"
         decoding="async"
         data-testid="hero-background-image"

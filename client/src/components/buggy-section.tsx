@@ -98,6 +98,7 @@ export default function BuggySection() {
                 alt={route.alt}
                 className="w-full h-48 object-cover" 
                 loading="lazy"
+                decoding="async"
                 data-testid={`buggy-image-${route.id}`}
               />
               <div className="p-6">

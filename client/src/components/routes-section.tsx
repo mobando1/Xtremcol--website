@@ -95,6 +95,7 @@ export default function RoutesSection() {
                   alt={imageData.alt}
                   className="w-full h-48 object-cover" 
                   loading="lazy"
+                  decoding="async"
                   data-testid={`route-image-${route.name}`}
                 />
                 <div className="p-6">
