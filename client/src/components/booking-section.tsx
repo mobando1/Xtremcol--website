@@ -1,3 +1,5 @@
+import BookingForm from "./booking-form";
+
 const bookingSteps = [
   {
     number: 1,
@@ -56,14 +58,23 @@ export default function BookingSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4" data-testid="booking-title">
-            Cómo Reservar <i className="fas fa-calendar-alt text-secondary ml-2"></i>
+            Reserva tu Aventura <i className="fas fa-calendar-alt text-secondary ml-2"></i>
           </h2>
           <p className="text-xl text-muted-foreground" data-testid="booking-subtitle">
-            6 pasos simples para tu aventura extrema
+            Sistema de reservas en tiempo real con verificación de disponibilidad
           </p>
+        </div>
+
+        {/* Formulario de Reservas Funcional */}
+        <div className="mb-16">
+          <BookingForm />
         </div>
         
         <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold mb-6">Proceso de Reserva</h3>
+          </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {bookingSteps.map((step) => (
               <div key={step.number} className="text-center animate-fade-in" data-testid={`booking-step-${step.number}`}>
@@ -95,18 +106,18 @@ export default function BookingSection() {
             </div>
             
             <div className="text-center p-4 bg-secondary/10 rounded-lg mb-8" data-testid="booking-warning">
-              <p className="text-secondary font-semibold">⚠️ Las reservas por día son limitadas</p>
+              <p className="text-secondary font-semibold">⚠️ Las reservas por día son limitadas - usa el formulario arriba para verificar disponibilidad</p>
             </div>
             
             <div className="text-center">
               <a 
-                href="https://wa.me/573212566270?text=Hola! Quiero hacer una reserva para una aventura extrema"
+                href="https://wa.me/573212566270?text=Hola! Tengo preguntas sobre las reservas"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block bg-primary hover:bg-accent text-primary-foreground px-8 py-4 rounded-lg text-xl font-bold glow-red hover-glow transition-all duration-300"
+                className="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-bold glow-red hover-glow transition-all duration-300"
                 data-testid="final-booking-btn">
                 <i className="fab fa-whatsapp mr-2"></i>
-                Reservar Ahora por WhatsApp
+                ¿Preguntas? Contáctanos por WhatsApp
               </a>
             </div>
           </div>
