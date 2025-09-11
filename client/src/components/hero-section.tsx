@@ -12,11 +12,13 @@ export default function HeroSection() {
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center hero-overlay"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${contentMap.heroImage.src})`
         }}
       />
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40" />
       
       <div className="relative z-10 text-center px-4">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-wide animate-fade-in" data-testid="hero-title">
