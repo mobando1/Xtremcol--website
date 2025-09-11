@@ -38,9 +38,14 @@ export default function HeroSection() {
             href="https://wa.me/573212566270" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-primary hover:bg-accent text-primary-foreground px-8 py-4 rounded-lg text-lg font-bold glow-red hover-glow transition-all duration-300"
+            className="bg-primary hover:bg-accent text-primary-foreground px-8 py-4 rounded-lg text-lg font-bold glow-red hover-glow transition-all duration-300 flex items-center justify-center"
             data-testid="hero-whatsapp-btn">
-            <i className="fab fa-whatsapp mr-2"></i>
+            <img 
+              src={contentMap.whatsappLogo.src} 
+              alt={contentMap.whatsappLogo.alt}
+              className="w-6 h-6 mr-2"
+              loading="lazy"
+            />
             Reserva por WhatsApp
           </a>
           <button 

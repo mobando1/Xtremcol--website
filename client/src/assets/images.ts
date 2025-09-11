@@ -18,3 +18,6 @@ export { default as IMG_1962 } from "@assets/IMG_1962_1757612870221.jpeg";
 export { default as IMG_2057 } from "@assets/IMG_2057_1757612870221.jpeg";
 export { default as IMG_2082 } from "@assets/IMG_2082_1757612870221.jpeg";
 export { default as IMG_2101 } from "@assets/IMG_2101_1757612870221.jpeg";
+
+// WhatsApp Logo
+export { default as WhatsAppLogo } from "@assets/WhatsApp Image 2025-04-09 at 13.37.11_1757627775478.jpeg";

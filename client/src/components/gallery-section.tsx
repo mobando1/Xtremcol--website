@@ -102,9 +102,14 @@ export default function GallerySection() {
             href="https://wa.me/573212566270?text=Hola! Me gustó la galería. Quiero reservar una aventura"
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block bg-primary hover:bg-accent text-primary-foreground px-8 py-4 rounded-lg font-semibold glow-red hover-glow transition-all duration-300"
+            className="inline-flex items-center bg-primary hover:bg-accent text-primary-foreground px-8 py-4 rounded-lg font-semibold glow-red hover-glow transition-all duration-300"
             data-testid="gallery-whatsapp-btn">
-            <i className="fab fa-whatsapp mr-2"></i>
+            <img 
+              src={contentMap.whatsappLogo.src} 
+              alt={contentMap.whatsappLogo.alt}
+              className="w-5 h-5 mr-2"
+              loading="lazy"
+            />
             ¿Te gustó? Reserva por WhatsApp
           </a>
         </div>

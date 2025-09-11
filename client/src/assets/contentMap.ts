@@ -1,7 +1,8 @@
 import {
   IMG_0728, IMG_0765, IMG_0809, IMG_0851, IMG_0877, IMG_0907,
   IMG_1009, IMG_1016, IMG_1093, IMG_1536, IMG_1576, IMG_1857,
-  IMG_1878, IMG_1895, IMG_1923, IMG_1962, IMG_2057, IMG_2082, IMG_2101
+  IMG_1878, IMG_1895, IMG_1923, IMG_1962, IMG_2057, IMG_2082, IMG_2101,
+  WhatsAppLogo
 } from './images';
 
 // Semantic mapping of XTREMCOL photos to content sections
@@ -68,6 +69,12 @@ export const contentMap = {
   extrasPoster: {
     src: IMG_1576,
     alt: 'XTREMCOL video aventura extrema POV cuatrimotos y buggies'
+  },
+
+  // WhatsApp Logo
+  whatsappLogo: {
+    src: WhatsAppLogo,
+    alt: 'WhatsApp Logo'
   },
 
   // Gallery section - Diverse collection
