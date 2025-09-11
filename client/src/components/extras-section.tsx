@@ -67,14 +67,8 @@ export default function ExtrasSection() {
                   href="https://wa.me/573212566270?text=Hola! Quiero agregar video profesional a mi reserva"
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-full bg-secondary hover:bg-yellow-400 text-secondary-foreground py-3 px-4 rounded-md font-semibold text-center flex items-center justify-center transition-colors duration-300"
+                  className="w-full bg-secondary hover:bg-yellow-400 text-secondary-foreground py-3 px-4 rounded-md font-semibold text-center block transition-colors duration-300"
                   data-testid="video-book-btn">
-                  <img 
-                    src={contentMap.whatsappLogo.src} 
-                    alt={contentMap.whatsappLogo.alt}
-                    className="w-5 h-5 mr-2"
-                    loading="lazy"
-                  />
                   ¡Ahorra $20.000! Reserva Online
                 </a>
               </div>

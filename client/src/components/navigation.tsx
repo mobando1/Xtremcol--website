@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { contentMap } from "@/assets/contentMap";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,10 +19,14 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold gradient-text tracking-wider cursor-pointer" 
-                onClick={() => scrollToSection('hero')} data-testid="logo">
-              XTREMCOL
-            </h1>
+            <img 
+              src={contentMap.whatsappLogo.src} 
+              alt={contentMap.whatsappLogo.alt}
+              className="h-10 w-auto cursor-pointer"
+              onClick={() => scrollToSection('hero')} 
+              data-testid="logo"
+              loading="eager"
+            />
           </div>
           
           {/* Desktop Menu */}
