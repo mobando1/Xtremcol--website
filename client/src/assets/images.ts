@@ -1,0 +1,20 @@
+// XTREMCOL Real Photos
+export { default as IMG_0728 } from "@assets/IMG_0728_1757612836279.jpeg";
+export { default as IMG_0765 } from "@assets/IMG_0765_1757612836281.jpeg";
+export { default as IMG_0809 } from "@assets/IMG_0809_1757612836282.jpeg";
+export { default as IMG_0851 } from "@assets/IMG_0851_1757612870219.jpeg";
+export { default as IMG_0877 } from "@assets/IMG_0877_1757612870220.jpeg";
+export { default as IMG_0907 } from "@assets/IMG_0907_1757612870220.jpeg";
+export { default as IMG_1009 } from "@assets/IMG_1009_1757612870220.jpeg";
+export { default as IMG_1016 } from "@assets/IMG_1016_1757612870220.jpeg";
+export { default as IMG_1093 } from "@assets/IMG_1093_1757612870220.jpeg";
+export { default as IMG_1536 } from "@assets/IMG_1536_1757612870220.jpeg";
+export { default as IMG_1576 } from "@assets/IMG_1576_1757612870220.jpeg";
+export { default as IMG_1857 } from "@assets/IMG_1857_1757612870220.jpeg";
+export { default as IMG_1878 } from "@assets/IMG_1878_1757612870220.jpeg";
+export { default as IMG_1895 } from "@assets/IMG_1895_1757612870221.jpeg";
+export { default as IMG_1923 } from "@assets/IMG_1923_1757612870221.jpeg";
+export { default as IMG_1962 } from "@assets/IMG_1962_1757612870221.jpeg";
+export { default as IMG_2057 } from "@assets/IMG_2057_1757612870221.jpeg";
+export { default as IMG_2082 } from "@assets/IMG_2082_1757612870221.jpeg";
+export { default as IMG_2101 } from "@assets/IMG_2101_1757612870221.jpeg";
