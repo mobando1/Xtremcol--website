@@ -1,18 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
 import { useLocation } from 'wouter';
 import { contentMap } from '@/assets/contentMap';
-
-type Route = {
-  id: string;
-  name: string;
-  displayName: string;
-  vehicleType: string;
-  duration: string;
-  couplePrice: string;
-  individualPrice: string;
-  description: string;
-  includes: string[];
-};
+import { staticRoutes } from '@/data/routes';
 
 // Route images mapping - now using real XTREMCOL photos
 const routeImages: Record<string, { image: string; alt: string }> = {
@@ -35,37 +23,15 @@ const routeImages: Record<string, { image: string; alt: string }> = {
 };
 
 export default function RoutesSection() {
-  const [, navigate] = useLocation();
-  
-  // Fetch routes from API
-  const { data: allRoutes = [], isLoading } = useQuery({
-    queryKey: ['/api/routes'],
-    queryFn: async () => {
-      const response = await fetch('/api/routes');
-      if (!response.ok) throw new Error('Failed to fetch routes');
-      return response.json();
-    }
-  });
+  // Use static routes - no backend needed
+  const routes = staticRoutes;
 
-  // Filter only cuatrimoto routes for this section
-  const routes = allRoutes.filter((route: Route) => route.vehicleType === 'cuatrimoto');
-
-  const handleBookRoute = (routeId: string) => {
-    // Navigate to booking section with preselected route
-    navigate(`/?vehicle=cuatrimoto&routeId=${routeId}#reservar`);
+  const handleBookRoute = (routeName: string) => {
+    // Open WhatsApp with route info
+    const message = `Hola! Quiero reservar la ruta ${routeName}. ¿Tienen disponibilidad?`;
+    const whatsappUrl = `https://wa.me/573212566270?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
-
-  if (isLoading) {
-    return (
-      <section id="rutas" className="py-20 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="text-xl text-muted-foreground">Cargando rutas...</div>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section id="rutas" className="py-20 bg-muted/20">
@@ -80,7 +46,7 @@ export default function RoutesSection() {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {routes.map((route: Route) => {
+          {routes.map((route) => {
             const imageData = routeImages[route.name] || routeImages.agua_clara;
             const formattedCouplePrice = route.couplePrice ? `$${parseInt(route.couplePrice).toLocaleString()}` : 'N/A';
             const formattedIndividualPrice = route.individualPrice ? `$${parseInt(route.individualPrice).toLocaleString()}` : 'N/A';
@@ -119,7 +85,7 @@ export default function RoutesSection() {
                     ))}
                   </div>
                   <button 
-                    onClick={() => handleBookRoute(route.id)}
+                    onClick={() => handleBookRoute(route.displayName)}
                     className="w-full bg-primary hover:bg-accent text-primary-foreground py-3 px-4 rounded-md font-semibold text-center transition-colors duration-300"
                     data-testid={`route-book-btn-${route.name}`}>
                     Reservar esta ruta
