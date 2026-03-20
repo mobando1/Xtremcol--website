@@ -18,8 +18,8 @@ export const staticRoutes: StaticRoute[] = [
     displayName: "Agua Clara",
     vehicleType: "cuatrimoto",
     duration: "1 hora",
-    couplePrice: "150000",
-    individualPrice: "100000",
+    couplePrice: "250000",
+    individualPrice: "200000",
     description: "Ruta perfecta para principiantes. Paisajes hermosos y cascadas naturales.",
     includes: [
       "Guía profesional",
@@ -34,8 +34,8 @@ export const staticRoutes: StaticRoute[] = [
     displayName: "Salto Versalles",
     vehicleType: "cuatrimoto",
     duration: "1.5 horas",
-    couplePrice: "180000",
-    individualPrice: "120000",
+    couplePrice: "300000",
+    individualPrice: "250000",
     description: "Ruta intermedia con vistas espectaculares de cascadas y naturaleza.",
     includes: [
       "Guía profesional",
@@ -51,8 +51,8 @@ export const staticRoutes: StaticRoute[] = [
     displayName: "Alto del Totumal",
     vehicleType: "cuatrimoto",
     duration: "2 horas",
-    couplePrice: "200000",
-    individualPrice: "140000",
+    couplePrice: "350000",
+    individualPrice: "290000",
     description: "Aventura extrema en el punto más alto. Para aventureros experimentados.",
     includes: [
       "Guía profesional",
@@ -68,8 +68,8 @@ export const staticRoutes: StaticRoute[] = [
     displayName: "Pozo Encantado",
     vehicleType: "cuatrimoto",
     duration: "2.5 horas",
-    couplePrice: "220000",
-    individualPrice: "160000",
+    couplePrice: "360000",
+    individualPrice: "290000",
     description: "La ruta más completa. Explora pozos naturales y paisajes únicos.",
     includes: [
       "Guía profesional",
