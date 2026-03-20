@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { contentMap } from '@/assets/contentMap';
+import { whatsappLink } from '@/data/constants';
 
 // Using real XTREMCOL photos from contentMap
 const galleryItems = contentMap.gallery.map(item => ({
@@ -99,7 +100,7 @@ export default function GallerySection() {
         
         <div className="text-center">
           <a 
-            href="https://wa.me/573212566270?text=Hola! Me gustó la galería. Quiero reservar una aventura"
+            href={whatsappLink("Hola! Me gustó la galería. Quiero reservar una aventura")}
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block bg-primary hover:bg-accent text-primary-foreground px-8 py-4 rounded-lg font-semibold glow-red hover-glow transition-all duration-300"

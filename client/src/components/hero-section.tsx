@@ -1,4 +1,5 @@
 import { contentMap } from '../assets/contentMap';
+import { whatsappLink } from '@/data/constants';
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -23,10 +24,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/40" />
       
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-wide animate-fade-in" data-testid="hero-title">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-wide animate-fade-in" data-testid="hero-title">
           <span className="block">VIVE LA</span>
           <span className="gradient-text block">ADRENALINA</span>
-          <span className="block text-3xl md:text-4xl mt-2">EN GUADUAS</span>
+          <span className="block text-2xl sm:text-3xl md:text-4xl mt-2">EN GUADUAS</span>
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-muted-foreground animate-fade-in" data-testid="hero-subtitle">
@@ -35,7 +36,7 @@ export default function HeroSection() {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-up">
           <a 
-            href="https://wa.me/573212566270" 
+            href={whatsappLink()}
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-primary hover:bg-accent text-primary-foreground px-8 py-4 rounded-lg text-lg font-bold glow-red hover-glow transition-all duration-300"

@@ -1,3 +1,5 @@
+import { whatsappLink } from '@/data/constants';
+
 const quickLinks = [
   { name: 'Rutas', href: '#rutas' },
   { name: 'Buggy Can-Am', href: '#buggy' },
@@ -33,17 +35,27 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4" data-testid="footer-social">
               <a 
-                href="https://wa.me/573212566270" 
+                href={whatsappLink()}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-green-500 hover:text-green-400 transition-colors duration-300"
                 data-testid="footer-whatsapp">
                 <i className="fab fa-whatsapp text-2xl"></i>
               </a>
-              <a 
-                href="#" 
+              <a
+                href="https://instagram.com/xtremcol"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-pink-500 hover:text-pink-400 transition-colors duration-300"
                 data-testid="footer-instagram">
+                <i className="fab fa-instagram text-2xl"></i>
+              </a>
+              <a
+                href="https://instagram.com/guaduasmagica"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 hover:text-pink-400 transition-colors duration-300"
+                data-testid="footer-instagram-guaduas">
                 <i className="fab fa-instagram text-2xl"></i>
               </a>
             </div>

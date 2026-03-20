@@ -1,4 +1,5 @@
 import { contentMap } from '@/assets/contentMap';
+import { whatsappLink } from '@/data/constants';
 
 const trochaOptions = [
   {
@@ -96,7 +97,7 @@ export default function TrochaVipSection() {
                   </div>
                 </div>
                 <a 
-                  href={`https://wa.me/573212566270?text=${encodeURIComponent(option.whatsappMessage)}`}
+                  href={whatsappLink(option.whatsappMessage)}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full bg-primary hover:bg-accent text-primary-foreground py-3 px-4 rounded-md font-semibold text-center block transition-colors duration-300"

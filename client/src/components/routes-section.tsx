@@ -1,6 +1,6 @@
-import { useLocation } from 'wouter';
 import { contentMap } from '@/assets/contentMap';
 import { staticRoutes } from '@/data/routes';
+import { whatsappLink } from '@/data/constants';
 
 // Route images mapping - now using real XTREMCOL photos
 const routeImages: Record<string, { image: string; alt: string }> = {
@@ -29,8 +29,7 @@ export default function RoutesSection() {
   const handleBookRoute = (routeName: string) => {
     // Open WhatsApp with route info
     const message = `Hola! Quiero reservar la ruta ${routeName}. ¿Tienen disponibilidad?`;
-    const whatsappUrl = `https://wa.me/573212566270?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappLink(message), '_blank');
   };
 
   return (

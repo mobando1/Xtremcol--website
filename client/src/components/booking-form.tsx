@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { staticRoutes, buggyRoutes, type StaticRoute } from "@/data/routes";
+import { whatsappLink } from "@/data/constants";
 
 export default function BookingForm() {
   const [selectedVehicleCategory, setSelectedVehicleCategory] = useState<string>("");
@@ -104,9 +105,7 @@ ${formData.notes ? `📝 *Notas:* ${formData.notes}` : ''}
 ¿Tienen disponibilidad para esta fecha?`;
 
     // Open WhatsApp with the message
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/573212566270?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappLink(whatsappMessage), '_blank');
 
     // Show success message
     toast({

@@ -1,3 +1,5 @@
+import { whatsappLink } from '@/data/constants';
+
 const contactInfo = [
   {
     id: 'whatsapp',
@@ -50,13 +52,14 @@ export default function ContactSection() {
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           {/* Map Placeholder */}
           <div className="motorsport-card rounded-lg overflow-hidden animate-fade-in" data-testid="map-container">
-            <div className="bg-muted/30 h-96 flex items-center justify-center">
-              <div className="text-center">
-                <i className="fas fa-map text-secondary text-6xl mb-4"></i>
-                <p className="text-muted-foreground">Mapa de Google embebido</p>
-                <p className="text-sm text-muted-foreground">Guaduas, Cundinamarca, Colombia</p>
-              </div>
-            </div>
+            <iframe
+              title="Ubicación XTREMCOL - Guaduas, Cundinamarca"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63547.97!2d-74.6!3d5.07!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4078a2b8e0c2c5%3A0x5b5c5e5f6a7b8c9d!2sGuaduas%2C+Cundinamarca!5e0!3m2!1ses!2sco!4v1"
+              className="w-full h-96 border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
           
           {/* Contact Info */}
@@ -84,7 +87,7 @@ export default function ContactSection() {
             
             <div className="text-center">
               <a 
-                href="https://wa.me/573212566270" 
+                href={whatsappLink()}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-bold glow-red hover-glow transition-all duration-300"

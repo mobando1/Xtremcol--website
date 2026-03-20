@@ -1,4 +1,5 @@
 import { contentMap } from '@/assets/contentMap';
+import { whatsappLink } from '@/data/constants';
 
 const buggyRoutes = [
   {
@@ -135,7 +136,7 @@ export default function BuggySection() {
                 </div>
                 <div className="space-y-2">
                   <a 
-                    href={`https://wa.me/573212566270?text=${encodeURIComponent(route.xdsMessage)}`}
+                    href={whatsappLink(route.xdsMessage)}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-full bg-primary hover:bg-accent text-primary-foreground py-2 px-4 rounded-md font-semibold text-center block text-sm transition-colors duration-300"
@@ -143,7 +144,7 @@ export default function BuggySection() {
                     Reservar XDS
                   </a>
                   <a 
-                    href={`https://wa.me/573212566270?text=${encodeURIComponent(route.x3Message)}`}
+                    href={whatsappLink(route.x3Message)}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-full bg-secondary hover:bg-yellow-400 text-secondary-foreground py-2 px-4 rounded-md font-semibold text-center block text-sm transition-colors duration-300"

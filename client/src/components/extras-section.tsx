@@ -1,4 +1,5 @@
 import { contentMap } from '@/assets/contentMap';
+import { whatsappLink } from '@/data/constants';
 
 export default function ExtrasSection() {
   return (
@@ -64,7 +65,7 @@ export default function ExtrasSection() {
                 </div>
 
                 <a 
-                  href="https://wa.me/573212566270?text=Hola! Quiero agregar video profesional a mi reserva"
+                  href={whatsappLink("Hola! Quiero agregar video profesional a mi reserva")}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full bg-secondary hover:bg-yellow-400 text-secondary-foreground py-3 px-4 rounded-md font-semibold text-center block transition-colors duration-300"

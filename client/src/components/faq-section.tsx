@@ -1,3 +1,5 @@
+import { whatsappLink } from '@/data/constants';
+
 const faqItems = [
   {
     id: 'edad-minima',
@@ -75,7 +77,7 @@ export default function FaqSection() {
             ¿Tienes otra pregunta?
           </p>
           <a 
-            href="https://wa.me/573212566270?text=Hola! Tengo una pregunta sobre las aventuras extremas"
+            href={whatsappLink("Hola! Tengo una pregunta sobre las aventuras extremas")}
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block bg-secondary hover:bg-yellow-400 text-secondary-foreground px-6 py-3 rounded-lg font-semibold transition-colors duration-300"

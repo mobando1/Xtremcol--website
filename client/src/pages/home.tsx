@@ -1,12 +1,13 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import RoutesSection from "@/components/routes-section";
-
+import BuggySection from "@/components/buggy-section";
 import TrochaVipSection from "@/components/trocha-vip-section";
 import ExtrasSection from "@/components/extras-section";
 import BookingSection from "@/components/booking-section";
 import FaqSection from "@/components/faq-section";
 import GallerySection from "@/components/gallery-section";
+import TestimonialsSection from "@/components/testimonials-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import WhatsAppButton from "@/components/whatsapp-button";
@@ -23,12 +24,13 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <RoutesSection />
-
+      <BuggySection />
       <TrochaVipSection />
       <ExtrasSection />
       <BookingSection />
       <FaqSection />
       <GallerySection />
+      <TestimonialsSection />
       <ContactSection />
       <Footer />
       <WhatsAppButton />
