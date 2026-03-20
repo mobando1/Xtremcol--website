@@ -2,6 +2,7 @@ import {
   IMG_0728, IMG_0765, IMG_0809, IMG_0851, IMG_0877, IMG_0907,
   IMG_1009, IMG_1016, IMG_1093, IMG_1536, IMG_1576, IMG_1857,
   IMG_1878, IMG_1895, IMG_1923, IMG_1962, IMG_2057, IMG_2082, IMG_2101,
+  CUATRI_0413, CUATRI_0631, CUATRI_0649, CUATRI_2796,
   WhatsAppLogo
 } from './images';
 
@@ -16,20 +17,20 @@ export const contentMap = {
   // Cuatrimoto routes (routes-section.tsx)
   routeImages: {
     agua_clara: {
-      src: IMG_0728,
-      alt: 'XTREMCOL Ruta Agua Clara con vista al Río Magdalena en cuatrimoto Can-Am'
+      src: CUATRI_0413,
+      alt: 'XTREMCOL Ruta Agua Clara pareja en cuatrimoto por camino de tierra'
     },
     salto_versalles: {
-      src: IMG_0765,
-      alt: 'XTREMCOL Ruta Salto Versalles con cascada en cuatrimoto'
+      src: CUATRI_0631,
+      alt: 'XTREMCOL Ruta Salto Versalles aventura en cuatrimoto con paisaje'
     },
     alto_totumal: {
-      src: IMG_0809,
-      alt: 'XTREMCOL Ruta Alto de Totumal con vista panorámica montañosa'
+      src: CUATRI_0649,
+      alt: 'XTREMCOL Ruta Alto de Totumal pareja en cuatrimoto Can-Am'
     },
     pozo_encantado: {
-      src: IMG_0851,
-      alt: 'XTREMCOL Ruta Pozo Encantado por senderos naturales'
+      src: CUATRI_2796,
+      alt: 'XTREMCOL Ruta Pozo Encantado grupo en cuatrimotos por sendero boscoso'
     }
   },
 

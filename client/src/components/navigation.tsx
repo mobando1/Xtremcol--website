@@ -43,13 +43,7 @@ export default function Navigation() {
               data-testid="nav-trocha-vip">
               Trocha VIP
             </button>
-            <button 
-              onClick={() => scrollToSection('extras')} 
-              className="hover:text-primary transition-colors"
-              data-testid="nav-extras">
-              Extras
-            </button>
-            <button 
+            <button
               onClick={() => scrollToSection('reservar')} 
               className="hover:text-primary transition-colors"
               data-testid="nav-reservar">
@@ -112,13 +106,7 @@ export default function Navigation() {
                 data-testid="mobile-nav-trocha-vip">
                 Trocha VIP
               </button>
-              <button 
-                onClick={() => scrollToSection('extras')} 
-                className="text-left hover:text-primary transition-colors"
-                data-testid="mobile-nav-extras">
-                Extras
-              </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('reservar')} 
                 className="text-left hover:text-primary transition-colors"
                 data-testid="mobile-nav-reservar">

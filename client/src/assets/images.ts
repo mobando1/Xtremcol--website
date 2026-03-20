@@ -19,5 +19,11 @@ export { default as IMG_2057 } from "@assets/IMG_2057_1757612870221.webp";
 export { default as IMG_2082 } from "@assets/IMG_2082_1757612870221.webp";
 export { default as IMG_2101 } from "@assets/IMG_2101_1757612870221.webp";
 
+// Cuatrimoto-specific photos
+export { default as CUATRI_0413 } from "@assets/IMG_0413_cuatrimoto.jpg";
+export { default as CUATRI_0631 } from "@assets/IMG_0631_cuatrimoto.jpg";
+export { default as CUATRI_0649 } from "@assets/IMG_0649_cuatrimoto.jpg";
+export { default as CUATRI_2796 } from "@assets/IMG_2796_cuatrimoto.jpg";
+
 // WhatsApp Logo
 export { default as WhatsAppLogo } from "@assets/WhatsApp Image 2025-04-09 at 13.37.11_1757627775478.webp";

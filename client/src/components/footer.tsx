@@ -3,7 +3,6 @@ import { whatsappLink } from '@/data/constants';
 const quickLinks = [
   { name: 'Rutas', href: '#rutas' },
   { name: 'Trocha VIP', href: '#trocha-vip' },
-  { name: 'Extras', href: '#extras' },
   { name: 'Cómo Reservar', href: '#reservar' }
 ];
 
