@@ -1,7 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import RoutesSection from "@/components/routes-section";
-import BuggySection from "@/components/buggy-section";
 import TrochaVipSection from "@/components/trocha-vip-section";
 import ExtrasSection from "@/components/extras-section";
 import BookingSection from "@/components/booking-section";
@@ -24,7 +23,6 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <RoutesSection />
-      <BuggySection />
       <TrochaVipSection />
       <ExtrasSection />
       <BookingSection />

@@ -37,13 +37,7 @@ export default function Navigation() {
               data-testid="nav-rutas">
               Rutas
             </button>
-            <button 
-              onClick={() => scrollToSection('buggy')} 
-              className="hover:text-primary transition-colors"
-              data-testid="nav-buggy">
-              Buggy Can-Am
-            </button>
-            <button 
+            <button
               onClick={() => scrollToSection('trocha-vip')} 
               className="hover:text-primary transition-colors"
               data-testid="nav-trocha-vip">
@@ -112,13 +106,7 @@ export default function Navigation() {
                 data-testid="mobile-nav-rutas">
                 Rutas
               </button>
-              <button 
-                onClick={() => scrollToSection('buggy')} 
-                className="text-left hover:text-primary transition-colors"
-                data-testid="mobile-nav-buggy">
-                Buggy Can-Am
-              </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('trocha-vip')} 
                 className="text-left hover:text-primary transition-colors"
                 data-testid="mobile-nav-trocha-vip">

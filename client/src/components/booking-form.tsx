@@ -160,8 +160,7 @@ ${formData.notes ? `📝 *Notas:* ${formData.notes}` : ''}
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="cuatrimoto">🏍️ Cuatrimoto (ATV)</SelectItem>
-                    <SelectItem value="buggy">🚙 Buggy Can-Am</SelectItem>
-                    <SelectItem value="trocha">🌄 Trocha VIP (Buggy Día Completo)</SelectItem>
+                    <SelectItem value="trocha">🌄 Trocha VIP (Can-Am)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
