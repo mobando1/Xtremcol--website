@@ -29,7 +29,7 @@ const contactInfo = [
     id: 'schedule',
     icon: 'fas fa-calendar-alt',
     title: 'Horarios',
-    description: 'Fines de semana y festivos',
+    description: 'Todos los días',
     subdescription: 'Cupos limitados',
     bgColor: 'secondary',
     textColor: 'secondary-foreground'
