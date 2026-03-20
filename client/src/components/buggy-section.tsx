@@ -1,5 +1,6 @@
 import { contentMap } from '@/assets/contentMap';
 import { whatsappLink } from '@/data/constants';
+import { useScrollAnimate } from '@/hooks/use-scroll-animate';
 
 const buggyRoutes = [
   {
@@ -38,8 +39,9 @@ const buggyRoutes = [
 ];
 
 export default function BuggySection() {
+  const sectionRef = useScrollAnimate();
   return (
-    <section id="buggy" className="py-20">
+    <section id="buggy" className="py-16 md:py-20" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4" data-testid="buggy-title">
@@ -92,7 +94,7 @@ export default function BuggySection() {
           {buggyRoutes.map((route) => (
             <div 
               key={route.id}
-              className="motorsport-card rounded-lg overflow-hidden hover-glow transition-all duration-300 animate-fade-in"
+              className="motorsport-card rounded-lg overflow-hidden hover-glow scroll-animate"
               data-testid={`buggy-card-${route.id}`}>
               <img 
                 src={route.image}

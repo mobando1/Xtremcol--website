@@ -1,3 +1,5 @@
+import { useScrollAnimate } from '@/hooks/use-scroll-animate';
+
 const testimonials = [
   {
     id: 'testimonial-1',
@@ -40,8 +42,9 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function TestimonialsSection() {
+  const sectionRef = useScrollAnimate();
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-16 md:py-20" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -56,7 +59,7 @@ export default function TestimonialsSection() {
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="motorsport-card rounded-lg p-6 animate-fade-in flex flex-col"
+              className="motorsport-card rounded-lg p-6 scroll-animate flex flex-col"
             >
               <StarRating rating={t.rating} />
               <p className="text-muted-foreground mt-4 mb-6 flex-1 text-sm leading-relaxed">

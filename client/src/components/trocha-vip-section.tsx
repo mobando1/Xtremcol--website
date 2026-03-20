@@ -1,5 +1,6 @@
 import { contentMap } from '@/assets/contentMap';
 import { whatsappLink } from '@/data/constants';
+import { useScrollAnimate } from '@/hooks/use-scroll-animate';
 
 const trochaOptions = [
   {
@@ -35,8 +36,9 @@ const trochaOptions = [
 ];
 
 export default function TrochaVipSection() {
+  const sectionRef = useScrollAnimate();
   return (
-    <section id="trocha-vip" className="py-20 bg-muted/20">
+    <section id="trocha-vip" className="py-16 md:py-20 bg-muted/20" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4" data-testid="trocha-title">
@@ -51,7 +53,7 @@ export default function TrochaVipSection() {
           {trochaOptions.map((option) => (
             <div 
               key={option.id}
-              className={`motorsport-card rounded-lg overflow-hidden hover-glow transition-all duration-300 relative animate-fade-in ${
+              className={`motorsport-card rounded-lg overflow-hidden hover-glow relative scroll-animate ${
                 option.popular ? 'ring-2 ring-secondary' : ''
               }`}
               data-testid={`trocha-card-${option.id}`}>

@@ -19,10 +19,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ToastProvider>
-        <div className="scroll-smooth">
-          <Toaster />
-          <Router />
-        </div>
+        <Toaster />
+        <Router />
       </ToastProvider>
     </QueryClientProvider>
   );

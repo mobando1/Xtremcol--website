@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
         href={whatsappLink()}
         target="_blank" 
         rel="noopener noreferrer"
-        className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-xl glow-red hover-glow"
+        className="bg-primary hover:bg-accent text-primary-foreground p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-xl glow-red hover-glow"
         data-testid="whatsapp-float-btn">
         <i className="fab fa-whatsapp"></i>
       </a>

@@ -1,6 +1,7 @@
 import { contentMap } from '@/assets/contentMap';
 import { staticRoutes } from '@/data/routes';
 import { whatsappLink } from '@/data/constants';
+import { useScrollAnimate } from '@/hooks/use-scroll-animate';
 
 // Route images mapping - now using real XTREMCOL photos
 const routeImages: Record<string, { image: string; alt: string }> = {
@@ -23,7 +24,7 @@ const routeImages: Record<string, { image: string; alt: string }> = {
 };
 
 export default function RoutesSection() {
-  // Use static routes - no backend needed
+  const sectionRef = useScrollAnimate();
   const routes = staticRoutes;
 
   const handleBookRoute = (routeName: string) => {
@@ -33,7 +34,7 @@ export default function RoutesSection() {
   };
 
   return (
-    <section id="rutas" className="py-20 bg-muted/20">
+    <section id="rutas" className="py-16 md:py-20 bg-muted/20" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4" data-testid="routes-title">
@@ -53,7 +54,7 @@ export default function RoutesSection() {
             return (
               <div 
                 key={route.id}
-                className="motorsport-card rounded-lg overflow-hidden hover-glow transition-all duration-300 animate-fade-in"
+                className="motorsport-card rounded-lg overflow-hidden hover-glow scroll-animate"
                 data-testid={`route-card-${route.name}`}>
                 <img 
                   src={imageData.image}

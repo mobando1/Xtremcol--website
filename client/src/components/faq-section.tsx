@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { whatsappLink } from '@/data/constants';
+import { useScrollAnimate } from '@/hooks/use-scroll-animate';
 
 const faqItems = [
   {
@@ -44,44 +46,61 @@ const faqItems = [
 ];
 
 export default function FaqSection() {
+  const sectionRef = useScrollAnimate();
+  const [openId, setOpenId] = useState<string | null>(null);
+
+  const toggle = (id: string) => {
+    setOpenId(openId === id ? null : id);
+  };
+
   return (
-    <section id="faq" className="py-20">
+    <section id="faq" className="py-16 md:py-20" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" data-testid="faq-title">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Preguntas Frecuentes <i className="fas fa-question-circle text-secondary ml-2"></i>
           </h2>
-          <p className="text-xl text-muted-foreground" data-testid="faq-subtitle">
+          <p className="text-xl text-muted-foreground">
             Todo lo que necesitas saber antes de tu aventura
           </p>
         </div>
-        
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-12">
+
+        <div className="max-w-3xl mx-auto space-y-3 mb-12">
           {faqItems.map((item) => (
-            <div 
+            <div
               key={item.id}
-              className="motorsport-card rounded-lg p-6 animate-fade-in"
-              data-testid={`faq-item-${item.id}`}>
-              <h3 className="text-xl font-bold mb-3 text-primary" data-testid={`faq-question-${item.id}`}>
-                {item.question}
-              </h3>
-              <p className="text-muted-foreground" data-testid={`faq-answer-${item.id}`}>
-                {item.answer}
-              </p>
+              className="motorsport-card rounded-lg overflow-hidden scroll-animate">
+              <button
+                onClick={() => toggle(item.id)}
+                className="w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors duration-200">
+                <span className="font-semibold text-lg pr-4">{item.question}</span>
+                <i className={`fas fa-chevron-down text-secondary transition-transform duration-300 flex-shrink-0 ${
+                  openId === item.id ? 'rotate-180' : ''
+                }`}></i>
+              </button>
+              <div
+                className="overflow-hidden transition-all duration-300"
+                style={{
+                  maxHeight: openId === item.id ? '200px' : '0',
+                  opacity: openId === item.id ? 1 : 0,
+                }}>
+                <p className="px-5 pb-5 text-muted-foreground">
+                  {item.answer}
+                </p>
+              </div>
             </div>
           ))}
         </div>
-        
+
         <div className="text-center">
-          <p className="text-muted-foreground mb-6" data-testid="faq-more-questions">
+          <p className="text-muted-foreground mb-6">
             ¿Tienes otra pregunta?
           </p>
-          <a 
+          <a
             href={whatsappLink("Hola! Tengo una pregunta sobre las aventuras extremas")}
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-secondary hover:bg-yellow-400 text-secondary-foreground px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
-            data-testid="faq-whatsapp-btn">
+            className="inline-block bg-secondary hover:bg-yellow-400 text-secondary-foreground px-6 py-3 rounded-lg font-semibold transition-colors duration-300">
             <i className="fab fa-whatsapp mr-2"></i>
             Pregunta por WhatsApp
           </a>

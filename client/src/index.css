@@ -22,32 +22,11 @@
   --ring: hsl(0, 100%, 50%);
   --popover: hsl(0, 0%, 12%);
   --popover-foreground: hsl(0, 0%, 95%);
-  --font-sans: system-ui, sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: monospace;
   --radius: 8px;
 }
 
-.dark {
-  --background: hsl(0, 0%, 8%);
-  --foreground: hsl(0, 0%, 98%);
-  --card: hsl(0, 0%, 12%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --primary: hsl(0, 100%, 50%);
-  --primary-foreground: hsl(0, 0%, 98%);
-  --secondary: hsl(48, 100%, 50%);
-  --secondary-foreground: hsl(0, 0%, 8%);
-  --muted: hsl(0, 0%, 15%);
-  --muted-foreground: hsl(0, 0%, 70%);
-  --accent: hsl(0, 100%, 45%);
-  --accent-foreground: hsl(0, 0%, 98%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(0, 0%, 20%);
-  --input: hsl(0, 0%, 15%);
-  --ring: hsl(0, 100%, 50%);
-  --popover: hsl(0, 0%, 12%);
-  --popover-foreground: hsl(0, 0%, 95%);
+html {
+  scroll-behavior: smooth;
 }
 
 @layer base {
@@ -58,17 +37,17 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  h1, h2, h3, h4 {
+    font-family: 'Montserrat', 'DM Sans', system-ui, sans-serif;
+  }
 }
 
 @layer components {
   .glow-red {
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
   }
-  
-  .glow-yellow {
-    box-shadow: 0 0 15px rgba(255, 255, 0, 0.2);
-  }
-  
+
   .hover-glow:hover {
     box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
     transform: translateY(-2px);
@@ -85,18 +64,39 @@
   .motorsport-card {
     background: linear-gradient(145deg, hsl(0, 0%, 12%), hsl(0, 0%, 8%));
     border: 1px solid hsl(0, 0%, 20%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .hero-overlay {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4));
-  }
-
-  .scroll-smooth {
-    scroll-behavior: smooth;
+  .hero-gradient {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
   }
 }
 
 @layer utilities {
+  /* Scroll-triggered animations: start invisible */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger delay for children */
+  .scroll-animate.delay-1 { transition-delay: 0.1s; }
+  .scroll-animate.delay-2 { transition-delay: 0.2s; }
+  .scroll-animate.delay-3 { transition-delay: 0.3s; }
+
+  /* Legacy instant animations (hero only) */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-in-out forwards;
   }
@@ -106,24 +106,12 @@
   }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }

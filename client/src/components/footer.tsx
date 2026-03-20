@@ -108,7 +108,7 @@ export default function Footer() {
           </div>
           
           <div className="text-center text-sm text-muted-foreground" data-testid="footer-copyright">
-            <p>&copy; 2024 XTREMCOL. Todos los derechos reservados. | Turismo de aventura en Guaduas, Cundinamarca</p>
+            <p>&copy; {new Date().getFullYear()} XTREMCOL. Todos los derechos reservados. | Turismo de aventura en Guaduas, Cundinamarca</p>
           </div>
         </div>
       </div>

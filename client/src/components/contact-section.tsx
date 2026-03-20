@@ -90,7 +90,7 @@ export default function ContactSection() {
                 href={whatsappLink()}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-bold glow-red hover-glow transition-all duration-300"
+                className="inline-block bg-primary hover:bg-accent text-primary-foreground px-8 py-4 rounded-lg text-xl font-bold glow-red hover-glow transition-all duration-300"
                 data-testid="contact-whatsapp-btn">
                 <i className="fab fa-whatsapp mr-2"></i>
                 Contactar por WhatsApp
